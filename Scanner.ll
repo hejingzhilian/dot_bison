@@ -21,6 +21,7 @@ SPECIAL_SYMBOL   [\%()+*\-/|^&@~:#,;\[\]\{\}]
 %%
 
 AND {
+    std::cout << "input AND"<< std::endl;
     return 1;
 }
 
