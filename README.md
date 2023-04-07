@@ -10,6 +10,6 @@ sh gen_syntax.sh
 
 ### 第二步 生成bin
 
-···
+```
 bazel build //:main
 ```
