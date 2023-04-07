@@ -13,7 +13,7 @@ docker exec -it bison_test /bin/bash
 
 
 
-### 第一步 生成语法解析嗲吗
+### 第一步 生成语法解析代码
 生成Scanner.cpp 
 
 ``` 
