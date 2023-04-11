@@ -25,3 +25,12 @@ sh gen_syntax.sh
 ```
 bazel build //:main
 ```
+
+
+## 单测
+
+单测可以参考如下代码
+
+```
+bazel test --test_output=all //:hello_test
+```
