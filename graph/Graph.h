@@ -3,7 +3,7 @@
 #include<iostream>
 #include<string>
 #include<vector>
-
+namespace ss_graph{
 struct Node {
   std::string id;
   std::string class_name;
@@ -19,9 +19,11 @@ class Graph {
 public:
     Graph() {}
     ~Graph() {}
-    std::string debugString();
+    std::string DebugString();
 
 private:
     std::vector<Node> nodes;
     std::vector<Edge> edges;
 };
+
+}
