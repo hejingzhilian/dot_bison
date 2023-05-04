@@ -6,9 +6,9 @@ this code is test for bison parse dot language
 依赖的docker hejingzhilian/bison_practise
 
 ```
-~docker run -dt hejingzhilian/bison_practise:latest /bin/bash --name bison_test~
+~~docker run -dt hejingzhilian/bison_practise:latest /bin/bash --name bison_test~~
 
-~docker exec -it bison_test /bin/bash~
+~~docker exec -it bison_test /bin/bash~~
 ```
 
 
