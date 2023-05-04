@@ -17,6 +17,12 @@ std::string Graph::DebugString() {
      ret += "]";
      return ret;
 }
+bool Graph::loadFromDotLanguage(std::string str) {
+
+
+
+
+}
 
 
 }
