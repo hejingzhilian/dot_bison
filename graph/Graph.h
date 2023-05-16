@@ -15,11 +15,12 @@ struct Edge {
 };
 
 class Graph {
-
 public:
     Graph() {}
     ~Graph() {}
     std::string DebugString();
+
+    bool loadFromDotLanguage(std::string str);
 
 private:
     std::vector<Node> nodes;
