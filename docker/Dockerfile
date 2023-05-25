@@ -4,7 +4,7 @@ RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|
 RUN yum install -y wget
 RUN cd /etc/yum.repos.d/ && wget https://copr.fedorainfracloud.org/coprs/vbatts/bazel/repo/epel-8/vbatts-bazel-epel-8.repo && cd -
 RUN yum update -y
-RUN yum -y install bison flex bazel gcc-c++ cmake
+RUN yum -y install bison flex bazel3 gcc-c++ cmake
 RUN yum -y install ncurses-devel python39 python39-devel  clang clang-devel
 RUN yum -y remove vim
 

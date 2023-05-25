@@ -1572,12 +1572,12 @@ void yyfree (void * ptr )
 
 
 namespace sslib {
-DotScanner::Scanner(std::istream *input, std::ostream *output)
+DotScanner::DotScanner(std::istream *input, std::ostream *output)
     : yyFlexLexer(input, output)
 {
 }
 
-Scanner::~Scanner() {
+DotScanner::~DotScanner() {
 }
 
 }
