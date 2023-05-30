@@ -13,7 +13,10 @@ protected:
 
 
 TEST_F(DotScannerTest, yylexTest) {
-    
+    std::string test_str="aaaaaaaaa aaaaaa";
+    std::istringstream iss(test_str);
+    sslib::DotScanner dot(&iss, &std::cout);
+    dot.yylex();
 }
 
 

@@ -15,21 +15,23 @@ HEXDIGIT         [0-9a-fA-F]
 ID_FIRST_CHAR    [_[:alpha:]]
 ID_CHAR          [_[:alnum:]]
 SPECIAL_SYMBOL   [\%()+*\-/|^&@~:#,;\[\]\{\}]
-
-
-
 %%
 
+{ID_FIRST_CHAR}{ID_CHAR}* {
+    std::cout << "|" << YYText() << "|IDENTIFIER|" std::endl;
+    yylval->stringVal = new std::string(YYText(), YYLeng());
+    return token::IDENTIFIER;
+}
 
 %%
 
 namespace sslib {
-DotScanner::Scanner(std::istream *input, std::ostream *output)
+DotScanner::DotScanner(std::istream *input, std::ostream *output)
     : yyFlexLexer(input, output)
 {
 }
 
-Scanner::~Scanner() {
+DotScanner::~DotScanner() {
 }
 
 }
