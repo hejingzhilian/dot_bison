@@ -1,8 +1,16 @@
 %{
 #include"DotScanner.h"
+#include <iostream>
+#include "DotBisonParser.hpp"
 using namespace sslib;
+
+typedef DotBisonParser::semantic_type semantic_type;
+typedef DotBisonParser::token_type token_type;
+typedef DotBisonParser::token token;
+	
 #undef YY_DECL
-#define YY_DECL  int DotScanner::yylex()
+#define YY_DECL token_type DotScanner::yylex(semantic_type* yylval)
+
 %}
 
 %option c++
@@ -18,9 +26,9 @@ SPECIAL_SYMBOL   [\%()+*\-/|^&@~:#,;\[\]\{\}]
 %%
 
 {ID_FIRST_CHAR}{ID_CHAR}* {
-    std::cout << "|" << YYText() << "|IDENTIFIER|" std::endl;
+    std::cout << "|" << YYText() << "|IDENTIFIER|" <<std::endl;
     yylval->stringVal = new std::string(YYText(), YYLeng());
-    return token::IDENTIFIER;
+    //  return token::IDENTIFIER;
 }
 
 %%

@@ -1,7 +1,8 @@
 cc_library(
 	name="syntax_lib",
-	srcs= ["DotScanner.cpp"],
-	hdrs = ["DotScanner.h"]
+	srcs= glob(["*.cpp"]),
+  copts=["-fpermissive","-DYYDEBUG"],
+	hdrs = glob(["*.h"]) + glob(["*.hpp"]) + glob(["*.hh"])
 )
 
 cc_test(

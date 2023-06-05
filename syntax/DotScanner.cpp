@@ -411,10 +411,18 @@ static yyconst flex_int16_t yy_chk[11] =
 #line 1 "DotScanner.ll"
 #line 2 "DotScanner.ll"
 #include"DotScanner.h"
+#include <iostream>
+#include "DotBisonParser.hpp"
 using namespace sslib;
+
+typedef DotBisonParser::semantic_type semantic_type;
+typedef DotBisonParser::token_type token_type;
+typedef DotBisonParser::token token;
+	
 #undef YY_DECL
-#define YY_DECL  int DotScanner::yylex()
-#line 418 "DotScanner.cpp"
+#define YY_DECL token_type DotScanner::yylex(semantic_type* yylval)
+
+#line 426 "DotScanner.cpp"
 
 #define INITIAL 0
 
@@ -546,10 +554,10 @@ YY_DECL
 		}
 
 	{
-#line 18 "DotScanner.ll"
+#line 26 "DotScanner.ll"
 
 
-#line 553 "DotScanner.cpp"
+#line 561 "DotScanner.cpp"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -608,19 +616,19 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 20 "DotScanner.ll"
+#line 28 "DotScanner.ll"
 {
-    std::cout << "|" << YYText() << "|IDENTIFIER|" std::endl;
+    std::cout << "|" << YYText() << "|IDENTIFIER|" <<std::endl;
     yylval->stringVal = new std::string(YYText(), YYLeng());
-    return token::IDENTIFIER;
+    //  return token::IDENTIFIER;
 }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 26 "DotScanner.ll"
+#line 34 "DotScanner.ll"
 ECHO;
 	YY_BREAK
-#line 624 "DotScanner.cpp"
+#line 632 "DotScanner.cpp"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1575,7 +1583,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 26 "DotScanner.ll"
+#line 34 "DotScanner.ll"
 
 
 
